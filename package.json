@@ -1,0 +1,49 @@
+{
+    "name": "nerds-29",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Личный проект «Nerds» от HTML Academy",
+    "devDependencies": {
+        "@htmlacademy/editorconfig-cli": "1.0.0",
+        "browser-sync": "2.26.12",
+        "browserslist": "4.14.3",
+        "editorconfig": "0.15.3",
+        "eslint": "7.9.0",
+        "eslint-config-htmlacademy": "0.6.0",
+        "gulp": "4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-csso": "4.0.1",
+        "gulp-plumber": "1.2.1",
+        "gulp-rename": "2.0.0",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-uglify-es": "2.0.0",
+        "gulp-w3c-html-validator": "2.0.1",
+        "html-linter": "1.1.1",
+        "stylelint": "13.7.1",
+        "stylelint-config-htmlacademy": "0.1.4"
+    },
+    "scripts": {
+        "editorconfig": "editorconfig-cli",
+        "stylelint": "stylelint \"css/style.css\"",
+        "html-linter": "html-linter --config ./html-linter.json",
+        "start": "gulp start",
+        "build": "gulp build",
+        "test": "gulp test && npm run html-linter && npm run stylelint && npm run editorconfig"
+    },
+    "browserslist": [
+        "last 2 chrome version",
+        "last 2 firefox version",
+        "last 2 opera version",
+        "last 2 safari version"
+    ],
+    "editorconfig-cli": [
+        "*.json",
+        "html/**/*.html",
+        "js/**/*.js",
+        "css/style.css",
+        "img/**/*.svg"
+    ],
+    "engines": {
+        "node": "10.17"
+    }
+}
