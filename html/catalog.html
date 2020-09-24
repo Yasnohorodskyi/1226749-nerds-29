@@ -7,6 +7,203 @@
     <link rel="stylesheet" href="../css/style.min.css">
   </head>
   <body>
-
+    <header>
+      <nav>
+        <a href="index.html">
+          <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс.">
+        </a>
+        <ul>
+          <li>
+            <a href="blank.html">Студия</a>
+          </li>
+          <li>
+            <a href="blank.html">Клиeнты</a>
+          </li>
+          <li>
+            <a>Магазин</a>
+          </li>
+          <li>
+            <a href="blank.html">Контакты</a>
+          </li>
+        </ul>
+        <a href="blank.html">Корзина</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Магазин готовых шаблонов</h1>
+      <section class="templates">
+        <h2 class="visually-hidden">Шаблоны</h2>
+        <form method="GET" action="https://echo.htmlacademy.ru/">
+          <fieldset>
+            <legend>Стоимость:</legend>
+            <input type="range" min="0" max="20000" value="15000">
+            <input type="range" min="0" max="20000" value="15000">
+            <div>
+              <label for="cost-min-view">От</label>
+              <input type="number" name="cost-min-view" min="0" max="20000" value="0" id="cost-min-view">
+            </div>
+            <div>
+              <label for="cost-max-view">До</label>
+              <input type="number" name="cost-max-view" min="0" max="20000" value="15000" id="cost-max-view">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Сетка:</legend>
+            <div>
+              <label for="grid-adaptive">Адаптивная</label>
+              <input type="radio" name="grid" value="adaptive" id="grid-adaptive" checked>
+            </div>
+            <div>
+              <label for="grid-fixed">Фиксированная</label>
+              <input type="radio" name="grid" value="fixed" id="grid-fixed">
+            </div>
+            <div>
+              <label for="grid-responsive">Резиновая</label>
+              <input type="radio" name="grid" value="responsive" id="grid-responsive">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Особенности:</legend>
+            <div>
+              <label for="features-slider">Слайдер</label>
+              <input type="checkbox" name="features" value="slider" id="features-slider" checked>
+            </div>
+            <div>
+              <label for="features-advantage">Блок преимуществ</label>
+              <input type="checkbox" name="features" value="advantage" id="features-advantage">
+            </div>
+            <div>
+              <label for="features-news">Новости</label>
+              <input type="checkbox" name="features" value="news" id="features-news" checked>
+            </div>
+            <div>
+              <label for="features-gallery">Галерея</label>
+              <input type="checkbox" name="features" value="gallery" id="features-gallery">
+            </div>
+            <div>
+              <label for="features-basket">Корзина</label>
+              <input type="checkbox" name="features" value="basket" id="features-basket">
+            </div>
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
+        <form>
+          <fieldset>
+            <legend>Сортировать:</legend>
+            <label for="sort-type-cost">По цене</label>
+            <input type="radio" name="sort-type" id="sort-type-cost" checked>
+            <label for="sort-type-kind">По типу</label>
+            <input type="radio" name="sort-type" id="sort-type-kind">
+            <label for="sort-type-name">По названию</label>
+            <input type="radio" name="sort-type" id="sort-type-name">
+            <label for="sort-direction-descending">
+              <span class="visually-hidden">По убыванию</span>
+            </label>
+            <input type="radio" name="sort-direction" id="sort-direction-descending" checked>
+            <label for="sort-direction-ascending">
+              <span class="visually-hidden">По возрастанию</span>
+            </label>
+            <input type="radio" name="sort-direction" id="sort-direction-ascending">
+          </fieldset>
+        </form>
+        <ul>
+          <li>
+            <img src="../img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
+            <div>
+              <a href="blank.html">Sedona</a>
+              <p>Информационный сайт для туристов</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li>
+            <img src="../img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
+            <div>
+              <a href="blank.html">Pink App</a>
+              <p>Продуктовый лендинг приложения для iOS и Android</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li>
+            <img src="../img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
+            <div>
+              <a href="blank.html">Barbershop</a>
+              <p>Сайт салона красоты. Для мужчин, да.</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li>
+            <img src="../img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
+            <div>
+              <a href="blank.html">Mishka</a>
+              <p>Интернет-магазин вязаных игрушек</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li>
+            <img src="../img/template-aPlus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
+            <div>
+              <a href="blank.html">A Plus</a>
+              <p>Лендинг курсов повышения квалификации</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li>
+            <img src="../img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
+            <div>
+              <a href="blank.html">КВАСТ</a>
+              <p>Промо-сайт производителя крафтового кваса</p>
+              <button type="button">9 900 ₽</button>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a>1</a>
+          </li>
+          <li>
+            <a href="#">2</a>
+          </li>
+          <li>
+            <a href="#">3</a>
+          </li>
+          <li>
+            <a href="#">Следующая</a>
+          </li>
+        </ul>
+      </section>
+      <section class="map">
+        <h2>Наше расположение</h2>
+        <div>
+          <p>NЁRDS DESIGN STUDIO</p>
+          <p>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <a href="tel:+78122757575">+7 (812) 275-75-75</a>
+          <a href="blank.html">Напишите нам</a>
+        </div>
+        <div>
+          <img src="../img/map.png" width="1160" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
+        </div>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="blank.html">
+            <span class="visually-hidden">Наша группа во Вконтакте</span>
+          </a>
+        </li>
+        <li>
+          <a href="blank.html">
+            <span class="visually-hidden">Наша группа в Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="blank.html">
+            <span class="visually-hidden">Наш аккаунт в Instagram</span>
+          </a>
+        </li>
+      </ul>
+      <p>Давайте дружить, это выгодно!</p>
+      <p>Скидка 10% для друзей из социальных сетей.</p>
+    </footer>
   </body>
 </html>
