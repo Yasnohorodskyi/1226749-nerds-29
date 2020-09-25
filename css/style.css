@@ -1,15 +1,24 @@
 :root {
   --basic-black: #000000;
-  --basic-green: #00CA74;
+  --basic-dust: #D7DCDE;
   --basic-gray: #E1E1E1;
+  --basic-green: #00CA74;
   --basic-red: #FB565A;
   --basic-yellow: #EFC849;
   --basic-white: #FFFFFF;
 
   --special-black: #283136;
+  --special-dust: #B4B9BB;
   --special-gray: #666666;
+  --special-green: #00BC6C;
+  --special-red: #E74246;
+  --special-yellow: #EAB534;
+  --special-white: rgba(255, 255, 255, 0.3);
 
   --decorated-black: #444444;
+  --decorated-green: #00AA62;
+  --decorated-yellow: #E5A722;
+  --decorated-red: #D7373B;
 }
 
 /* typography */
@@ -64,6 +73,7 @@ img {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -108,26 +118,81 @@ input[type="radio"].visually-hidden {
   text-align: center;
   text-transform: uppercase;
 
+  cursor: pointer;
   background-color: var(--basic-red);
   border: none;
   border-radius: 3px;
+}
+
+.action-button:hover {
+  background-color: var(--special-red);
+}
+
+.action-button:active,
+.action-button:focus {
+  color: var(--special-white);
+
+  background-color: var(--decorated-red);
+  outline: none;
 }
 
 .action-button--green {
   background-color: var(--basic-green);
 }
 
+.action-button--green:hover {
+  background-color: var(--special-green);
+}
+
+.action-button--green:active,
+.action-button--green:focus {
+  background-color: var(--decorated-green);
+}
+
 .action-button--yellow {
   background-color: var(--basic-yellow);
 }
 
+.action-button--yellow:hover {
+  background-color: var(--special-yellow);
+}
+
+.action-button--yellow:active,
+.action-button--yellow:focus {
+  background-color: var(--decorated-yellow);
+}
+
+
 /* main-header */
 
 .main-header__navigation a {
-  color: inherit;
+  display: inline-block;
+
   font-weight: 500;
   line-height: 30px;
   text-transform: uppercase;
+}
+
+.main-header__navigation a:hover {
+  color: var(--basic-red);
+}
+
+.main-header__navigation a:active,
+.main-header__navigation a:focus {
+  color: inherit;
+
+  opacity: 0.3;
+  outline: none;
+}
+
+.main-header__navigation a:not([href]):not(.main-header__logo)::after {
+  content: "";
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--basic-red);
 }
 
 /* principles */
@@ -202,6 +267,21 @@ input[type="radio"].visually-hidden {
   vertical-align: text-top;
 }
 
+/* partners */
+
+.partners__link img {
+  opacity: 0.2;
+}
+
+.partners__link:hover img {
+  opacity: 1;
+}
+
+.partners__link:active img,
+.partners__link:focus img {
+  opacity: 0.1;
+}
+
 /* map */
 
 .map__description {
@@ -240,6 +320,20 @@ input[type="radio"].visually-hidden {
   border-radius: 50%;
 }
 
+.main-footer__link:hover {
+  background-color: var(--special-red);
+}
+
+.main-footer__link:active,
+.main-footer__link:focus {
+  background-color: var(--decorated-red);
+}
+
+.main-footer__link:active img,
+.main-footer__link:focus img {
+  opacity: 0.3;
+}
+
 .main-footer__promotion-title {
   font-weight: 700;
   font-size: 36px;
@@ -259,11 +353,77 @@ input[type="radio"].visually-hidden {
   line-height: 53px;
 }
 
+.popup__close-button {
+  display: block;
+  width: 21px;
+  height: 21px;
+
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("../img/close-cross.svg");
+  border: none;
+  opacity: 0.3;
+}
+
+.popup__close-button:hover {
+  opacity: 1;
+}
+
+.popup__close-button:active,
+.popup__close-button:focus {
+  opacity: 0.1;
+  outline: none;
+}
+
 .popup__field label {
   font-weight: bold;
   line-height: 18px;
 }
 
-.popup__button {
+.popup__field input,
+.popup__field textarea {
+  padding: 16px;
+
+  line-height: 18px;
+
+  background-color: var(--basic-white);
+  border: 2px solid var(--basic-dust);
+  border-radius: 3px;
+}
+
+.popup__field textarea {
+  resize: none;
+}
+
+.popup__field input:hover,
+.popup__field textarea:hover {
+  border-color: var(--special-dust);
+}
+
+.popup__field input:invalid,
+.popup__field textarea:invalid {
+  border-color: var(--special-red);
+}
+
+.popup__field input::placeholder,
+.popup__field textarea::placeholder {
+  color: var(--decorated-black);
+
+  opacity: 0.5;
+}
+
+.popup__field input:focus::placeholder,
+.popup__field textarea:focus::placeholder {
+  opacity: 1;
+}
+
+.popup__field input:invalid::placeholder,
+.popup__field textarea:invalid::placeholder {
+  color: var(--special-red);
+
+  opacity: 1;
+}
+
+.popup__submit {
   width: 259px;
 }

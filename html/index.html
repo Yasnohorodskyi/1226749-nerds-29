@@ -9,7 +9,7 @@
   <body>
     <header class="main-header">
       <nav class="main-header__navigation">
-        <a>
+        <a class="main-header__logo">
           <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс.">
         </a>
         <ul class="list-reset">
@@ -122,22 +122,22 @@
         <h2 class="visually-hidden">Наши партнеры</h2>
         <ul class="list-reset">
           <li>
-            <a href="https://htmlacademy.ru/intensive/htmlcss">
+            <a class="partners__link" href="https://htmlacademy.ru/intensive/htmlcss">
               <img src="../img/partner-1-htmlAcademy.png" width="200" height="68" alt="HTML Academy.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-2-barbershopBorodinsi.png" width="209" height="90" alt="Barbershop Borodinsi.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-3-pink.png" width="185" height="52" alt="Pink.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-4-mishka.png" width="173" height="84" alt="Mishka.">
             </a>
           </li>
@@ -183,7 +183,7 @@
     <section class="popup">
       <h2 class="popup__title">Напишите нам</h2>
       <form method="POST" action="https://echo.htmlacademy.ru/">
-        <button type="button">
+        <button class="popup__close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
         </button>
         <div class="popup__field">
@@ -198,7 +198,7 @@
           <label for="popup-field-letter">Текст письма:</label>
           <textarea name="letter" id="popup-field-letter" placeholder="В свободной форме"></textarea>
         </div>
-        <button class="popup__button action-button" type="submit">Отправить</button>
+        <button class="popup__submit action-button" type="submit">Отправить</button>
       </form>
     </section>
 
