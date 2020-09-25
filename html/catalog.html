@@ -90,84 +90,94 @@
         <form>
           <fieldset>
             <legend>Сортировать:</legend>
-            <label for="sort-type-cost">По цене</label>
-            <input type="radio" name="sort-type" id="sort-type-cost" checked>
-            <label for="sort-type-kind">По типу</label>
-            <input type="radio" name="sort-type" id="sort-type-kind">
-            <label for="sort-type-name">По названию</label>
-            <input type="radio" name="sort-type" id="sort-type-name">
-            <label for="sort-direction-descending">
-              <span class="visually-hidden">По убыванию</span>
-            </label>
-            <input type="radio" name="sort-direction" id="sort-direction-descending" checked>
-            <label for="sort-direction-ascending">
-              <span class="visually-hidden">По возрастанию</span>
-            </label>
-            <input type="radio" name="sort-direction" id="sort-direction-ascending">
+            <div class="templates__field-sort">
+              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-cost" checked>
+              <label for="sort-type-cost">По цене</label>
+            </div>
+            <div class="templates__field-sort">
+              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-kind">
+              <label for="sort-type-kind">По типу</label>
+            </div>
+            <div class="templates__field-sort">
+              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-name">
+              <label for="sort-type-name">По названию</label>
+            </div>
+            <div class="templates__field-sort-direction">
+              <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-descending" checked>
+              <label for="sort-direction-descending">
+                <span class="visually-hidden">По убыванию</span>
+              </label>
+            </div>
+            <div class="templates__field-sort-direction templates__field-sort-direction--ascending">
+              <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-ascending">
+              <label for="sort-direction-ascending">
+                <span class="visually-hidden">По возрастанию</span>
+              </label>
+            </div>
           </fieldset>
         </form>
         <ul class="list-reset">
           <li>
             <img src="../img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
-            <div>
-              <a href="blank.html">Sedona</a>
-              <p>Информационный сайт для туристов</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">Sedona</a>
+              <p class="templates__item-description">Информационный сайт для туристов</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
           <li>
             <img src="../img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
-            <div>
-              <a href="blank.html">Pink App</a>
-              <p>Продуктовый лендинг приложения для iOS и Android</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">Pink App</a>
+              <p class="templates__item-description">Продуктовый лендинг приложения для iOS и Android</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
           <li>
             <img src="../img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
-            <div>
-              <a href="blank.html">Barbershop</a>
-              <p>Сайт салона красоты. Для мужчин, да.</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">Barbershop</a>
+              <p class="templates__item-description">Сайт салона красоты. Для мужчин, да.</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
           <li>
             <img src="../img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
-            <div>
-              <a href="blank.html">Mishka</a>
-              <p>Интернет-магазин вязаных игрушек</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">Mishka</a>
+              <p class="templates__item-description">Интернет-магазин вязаных игрушек</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
           <li>
             <img src="../img/template-aPlus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
-            <div>
-              <a href="blank.html">A Plus</a>
-              <p>Лендинг курсов повышения квалификации</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">A Plus</a>
+              <p class="templates__item-description">Лендинг курсов повышения квалификации</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
           <li>
             <img src="../img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
-            <div>
-              <a href="blank.html">КВАСТ</a>
-              <p>Промо-сайт производителя крафтового кваса</p>
-              <button type="button">9 900 ₽</button>
+            <div class="templates__item-info">
+              <a class="templates__item-title" href="blank.html">КВАСТ</a>
+              <p class="templates__item-description">Промо-сайт производителя крафтового кваса</p>
+              <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
         </ul>
-        <ul class="list-reset">
+        <ul class="templates__pagination list-reset">
           <li>
-            <a>1</a>
+            <a class="templates__page-button action-button action-button--gray">1</a>
           </li>
           <li>
-            <a href="#">2</a>
+            <a class="templates__page-button action-button action-button--gray" href="#">2</a>
           </li>
           <li>
-            <a href="#">3</a>
+            <a class="templates__page-button action-button action-button--gray" href="#">3</a>
           </li>
           <li>
-            <a href="#">Следующая</a>
+            <a class="templates__page-button templates__page-button--next action-button action-button--gray" href="#">Следующая</a>
           </li>
         </ul>
       </section>
