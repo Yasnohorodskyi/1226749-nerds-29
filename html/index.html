@@ -9,7 +9,7 @@
   <body>
     <header class="main-header">
       <nav class="main-header__navigation">
-        <a>
+        <a class="main-header__logo">
           <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс.">
         </a>
         <ul class="list-reset">
@@ -29,7 +29,7 @@
         <a href="blank.html">Корзина</a>
       </nav>
     </header>
-    <main>
+    <main class="main">
       <h1 class="visually-hidden">Мы - дизайн-студия Нёрдс</h1>
       <section class="principles">
         <h2 class="visually-hidden">Наши принципы работы</h2>
@@ -72,19 +72,19 @@
         <h2 class="visually-hidden">Услуги</h2>
         <ul class="list-reset">
           <li>
-            <h3 class="services__servive-title">Веб-сайты</h3>
-            <p class="services__servive-description">Мир никогда не будет прежним после того как увидит ваш сайт!</p>
-            <a class="services__servive-button action-button" href="blank.html">Заказать</a>
+            <h3 class="services__service-title">Веб-сайты</h3>
+            <p class="services__service-description">Мир никогда не будет прежним после того как увидит ваш сайт!</p>
+            <a class="action-button" href="blank.html">Заказать</a>
           </li>
           <li>
-            <h3 class="services__servive-title">Приложения</h3>
-            <p class="services__servive-description">Покорите топ-10 приложений в AppStore и Google Play</p>
-            <a class="services__servive-button action-button action-button--green" href="blank.html">Заказать</a>
+            <h3 class="services__service-title">Приложения</h3>
+            <p class="services__service-description">Покорите топ-10 приложений в AppStore и Google Play</p>
+            <a class="action-button action-button--green" href="blank.html">Заказать</a>
           </li>
           <li>
-            <h3 class="services__servive-title">Презентации</h3>
-            <p class="services__servive-description">Вы даже не подозреваете, насколько вы изумительны!</p>
-            <a class="services__servive-button action-button action-button--yellow" href="blank.html">Заказать</a>
+            <h3 class="services__service-title">Презентации</h3>
+            <p class="services__service-description">Вы даже не подозреваете, насколько вы изумительны!</p>
+            <a class="action-button action-button--yellow" href="blank.html">Заказать</a>
           </li>
         </ul>
       </section>
@@ -122,36 +122,38 @@
         <h2 class="visually-hidden">Наши партнеры</h2>
         <ul class="list-reset">
           <li>
-            <a href="https://htmlacademy.ru/intensive/htmlcss">
+            <a class="partners__link" href="https://htmlacademy.ru/intensive/htmlcss">
               <img src="../img/partner-1-htmlAcademy.png" width="200" height="68" alt="HTML Academy.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-2-barbershopBorodinsi.png" width="209" height="90" alt="Barbershop Borodinsi.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-3-pink.png" width="185" height="52" alt="Pink.">
             </a>
           </li>
           <li>
-            <a href="blank.html">
+            <a class="partners__link" href="blank.html">
               <img src="../img/partner-4-mishka.png" width="173" height="84" alt="Mishka.">
             </a>
           </li>
         </ul>
       </section>
-      <section class="map">
+      <section class="placement">
         <h2 class="visually-hidden">Наше расположение</h2>
-        <div class="map__description">
-          <p class="map__description-title">NЁRDS DESIGN STUDIO</p>
-          <p class="map__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
-          <a class="map__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
-          <a class="map__description-button action-button" href="blank.html">Напишите нам</a>
+        <div class="placement__description-wrapper">
+          <div class="placement__description">
+            <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
+            <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+            <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+            <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
+          </div>
         </div>
-        <div>
+        <div class="placement__map">
           <img src="../img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
         </div>
       </section>
@@ -183,7 +185,7 @@
     <section class="popup">
       <h2 class="popup__title">Напишите нам</h2>
       <form method="POST" action="https://echo.htmlacademy.ru/">
-        <button type="button">
+        <button class="popup__close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
         </button>
         <div class="popup__field">
@@ -198,9 +200,10 @@
           <label for="popup-field-letter">Текст письма:</label>
           <textarea name="letter" id="popup-field-letter" placeholder="В свободной форме"></textarea>
         </div>
-        <button class="popup__button action-button" type="submit">Отправить</button>
+        <button class="popup__submit action-button" type="submit">Отправить</button>
       </form>
     </section>
 
+    <script src="../js/app.min.js"></script>
   </body>
 </html>
