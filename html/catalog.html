@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../css/style.min.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html">
+    <header class="main-header">
+      <nav class="main-header__navigation">
+        <a class="main-header__logo" href="index.html">
           <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс.">
         </a>
-        <ul>
+        <ul class="list-reset">
           <li>
             <a href="blank.html">Студия</a>
           </li>
@@ -29,63 +29,63 @@
         <a href="blank.html">Корзина</a>
       </nav>
     </header>
-    <main>
-      <h1>Магазин готовых шаблонов</h1>
+    <main class="main">
+      <div class="main__title-wrapper">
+        <h1 class="main__title">Магазин готовых шаблонов</h1>
+      </div>
       <section class="templates">
         <h2 class="visually-hidden">Шаблоны</h2>
         <form method="GET" action="https://echo.htmlacademy.ru/">
           <fieldset>
-            <legend>Стоимость:</legend>
-            <input type="range" min="0" max="20000" value="15000">
-            <input type="range" min="0" max="20000" value="15000">
-            <div>
-              <label for="cost-min-view">От</label>
-              <input type="number" name="cost-min-view" min="0" max="20000" value="0" id="cost-min-view">
+            <legend id="js-templates-cost-title">Стоимость:</legend>
+            <div class="templates__field-cost">
+              <label for="js-cost-min">От</label>
+              <input type="number" name="cost-min" min="0" max="20000" value="0" id="js-cost-min">
             </div>
-            <div>
-              <label for="cost-max-view">До</label>
-              <input type="number" name="cost-max-view" min="0" max="20000" value="15000" id="cost-max-view">
+            <div class="templates__field-cost">
+              <label for="js-cost-max">До</label>
+              <input type="number" name="js-cost-max" min="0" max="20000" value="15000" id="js-cost-max">
             </div>
           </fieldset>
           <fieldset>
             <legend>Сетка:</legend>
-            <div>
-              <label for="grid-adaptive">Адаптивная</label>
+            <div class="templates__field-grid">
               <input type="radio" name="grid" value="adaptive" id="grid-adaptive" checked>
+              <label for="grid-adaptive">Адаптивная</label>
             </div>
-            <div>
-              <label for="grid-fixed">Фиксированная</label>
+            <div class="templates__field-grid">
               <input type="radio" name="grid" value="fixed" id="grid-fixed">
+              <label for="grid-fixed">Фиксированная</label>
             </div>
-            <div>
-              <label for="grid-responsive">Резиновая</label>
+            <div class="templates__field-grid">
               <input type="radio" name="grid" value="responsive" id="grid-responsive">
+              <label for="grid-responsive">Резиновая</label>
             </div>
           </fieldset>
           <fieldset>
             <legend>Особенности:</legend>
-            <div>
-              <label for="features-slider">Слайдер</label>
+            <div class="templates__field-features">
               <input type="checkbox" name="features" value="slider" id="features-slider" checked>
+              <label for="features-slider">Слайдер</label>
             </div>
-            <div>
-              <label for="features-advantage">Блок преимуществ</label>
+            <div class="templates__field-features">
               <input type="checkbox" name="features" value="advantage" id="features-advantage">
+              <label for="features-advantage">Блок преимуществ</label>
             </div>
-            <div>
-              <label for="features-news">Новости</label>
+            <div class="templates__field-features">
               <input type="checkbox" name="features" value="news" id="features-news" checked>
+              <label for="features-news">Новости</label>
             </div>
-            <div>
-              <label for="features-gallery">Галерея</label>
+            <div class="templates__field-features">
               <input type="checkbox" name="features" value="gallery" id="features-gallery">
+              <label for="features-gallery">Галерея</label>
             </div>
-            <div>
-              <label for="features-basket">Корзина</label>
+            <div class="templates__field-features">
               <input type="checkbox" name="features" value="basket" id="features-basket">
+              <label for="features-basket">Корзина</label>
             </div>
           </fieldset>
-          <button type="submit">Показать</button>
+          <button class="templates__filter-submit action-button action-button--gray" type="submit">Показать</button>
         </form>
         <form>
           <fieldset>
@@ -106,7 +106,7 @@
             <input type="radio" name="sort-direction" id="sort-direction-ascending">
           </fieldset>
         </form>
-        <ul>
+        <ul class="list-reset">
           <li>
             <img src="../img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
             <div>
@@ -156,7 +156,7 @@
             </div>
           </li>
         </ul>
-        <ul>
+        <ul class="list-reset">
           <li>
             <a>1</a>
           </li>
@@ -171,39 +171,45 @@
           </li>
         </ul>
       </section>
-      <section class="map">
-        <h2>Наше расположение</h2>
-        <div>
-          <p>NЁRDS DESIGN STUDIO</p>
-          <p>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-          <a href="tel:+78122757575">+7 (812) 275-75-75</a>
-          <a href="blank.html">Напишите нам</a>
+      <section class="placement">
+        <h2 class="visually-hidden">Наше расположение</h2>
+        <div class="placement__description-wrapper">
+          <div class="placement__description">
+            <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
+            <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+            <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+            <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
+          </div>
         </div>
-        <div>
+        <div class="placement__map">
           <img src="../img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
         </div>
       </section>
     </main>
-    <footer>
-      <ul>
+    <footer class="main-footer">
+      <ul class="list-reset">
         <li>
-          <a href="blank.html">
-            <span class="visually-hidden">Наша группа во Вконтакте</span>
+          <a class="main-footer__link" href="blank.html">
+            <img src="../img/vk-icon.svg" width="26" height="15" alt="Перейти во Вконтакте">
           </a>
         </li>
         <li>
-          <a href="blank.html">
-            <span class="visually-hidden">Наша группа в Facebook</span>
+          <a class="main-footer__link" href="blank.html">
+            <img src="../img/fb-icon.svg" width="12" height="22" alt="Перейти в Facebook">
           </a>
         </li>
         <li>
-          <a href="blank.html">
-            <span class="visually-hidden">Наш аккаунт в Instagram</span>
+          <a class="main-footer__link" href="blank.html">
+            <img src="../img/insta-icon.svg" width="21" height="21" alt="Перейти в Instagram">
           </a>
         </li>
       </ul>
-      <p>Давайте дружить, это выгодно!</p>
-      <p>Скидка 10% для друзей из социальных сетей.</p>
+      <div>
+        <p class="main-footer__promotion-title">Давайте дружить, это выгодно!</p>
+        <p class="main-footer__promotion-description">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
     </footer>
+
+    <script src="../js/app.min.js"></script>
   </body>
 </html>

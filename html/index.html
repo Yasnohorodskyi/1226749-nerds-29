@@ -29,7 +29,7 @@
         <a href="blank.html">Корзина</a>
       </nav>
     </header>
-    <main>
+    <main class="main">
       <h1 class="visually-hidden">Мы - дизайн-студия Нёрдс</h1>
       <section class="principles">
         <h2 class="visually-hidden">Наши принципы работы</h2>
@@ -143,15 +143,17 @@
           </li>
         </ul>
       </section>
-      <section class="map">
+      <section class="placement">
         <h2 class="visually-hidden">Наше расположение</h2>
-        <div class="map__description">
-          <p class="map__description-title">NЁRDS DESIGN STUDIO</p>
-          <p class="map__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
-          <a class="map__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
-          <a class="map__description-button action-button" href="blank.html">Напишите нам</a>
+        <div class="placement__description-wrapper">
+          <div class="placement__description">
+            <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
+            <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+            <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+            <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
+          </div>
         </div>
-        <div>
+        <div class="placement__map">
           <img src="../img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
         </div>
       </section>
@@ -202,5 +204,6 @@
       </form>
     </section>
 
+    <script src="../js/app.min.js"></script>
   </body>
 </html>

@@ -52,7 +52,7 @@ gulp.task(`server`, function () {
   gulp.watch(`html/**/*.html`).on(`change`, server.reload);
   gulp.watch(`img/**/*.{png, jpg, svg, webp}`).on(`change`, server.reload);
   gulp.watch(`css/style.css`, gulp.series(`css`)).on(`change`, server.reload);
-  gulp.watch(`js/**/*.js`, gulp.series(`js`)).on(`change`, server.reload);
+  gulp.watch(`js/**/*.js`).on(`change`, gulp.series(`js`, server.reload));
 });
 
 gulp.task(`start`, gulp.series(`server`));
