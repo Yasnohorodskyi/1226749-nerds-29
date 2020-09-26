@@ -31,7 +31,13 @@
   --decorated-yellow: #E5A722;
   --decorated-red: #D7373B;
 
+  /* body variables */
+
   --main-width: 1160px;
+
+  /* action-button variables */
+
+  --action-button-padding: 40px;
 }
 
 /* typography */
@@ -119,9 +125,8 @@ input[type="radio"].visually-hidden {
 /* action-button */
 
 .action-button {
-  box-sizing: border-box;
   display: inline-block;
-  padding: 17px 40px 15px;
+  padding: 17px var(--action-button-padding, 40px) 15px;
 
   color: var(--basic-white);
   font-weight: 500;
@@ -267,8 +272,7 @@ input[type="radio"].visually-hidden {
 }
 
 .principles__slide-button {
-  padding-left: 54px;
-  padding-right: 54px;
+  --action-button-padding: 54px;
 }
 
 /* services */
@@ -394,8 +398,7 @@ input[type="radio"].visually-hidden {
 }
 
 .placement__description-button {
-  padding-left: 44px;
-  padding-right: 44px;
+  --action-button-padding: 44px;
 }
 
 .placement__map {
@@ -533,8 +536,7 @@ input[type="radio"].visually-hidden {
 }
 
 .popup__submit {
-  padding-left: 83px;
-  padding-right: 83px;
+  --action-button-padding: 83px;
 }
 
 /* templates */
@@ -610,8 +612,7 @@ input[type="radio"].visually-hidden {
 } */
 
 .templates__filter-submit {
-  padding-left: 88px;
-  padding-right: 88px;
+  --action-button-padding: 88px;
 }
 
 .templates__field-sort {
@@ -695,8 +696,7 @@ input[type="radio"].visually-hidden {
 }
 
 .templates__item-button {
-  padding-left: 72px;
-  padding-right: 72px;
+  --action-button-padding: 72px;
 }
 
 .templates__pagination {
@@ -704,13 +704,11 @@ input[type="radio"].visually-hidden {
 }
 
 .templates__page-button {
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
+  --action-button-padding: var(--side-padding);
 }
 
 .templates__page-button--next {
-  padding-left: 78px;
-  padding-right: 78px;
+  --action-button-padding: 78px;
 }
 
 .templates__page-button:not([href]) {
