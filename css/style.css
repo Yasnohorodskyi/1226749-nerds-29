@@ -452,7 +452,7 @@ input[type="radio"].visually-hidden {
 }
 
 .principles__slide-title {
-  margin: 44px 0 26px;
+  margin: 43px 0 27px;
 
   font-weight: 500;
   font-size: 55px;
@@ -510,7 +510,7 @@ input[type="radio"].visually-hidden {
 }
 
 .services__service-title {
-  margin: 18px 0 16px;
+  margin: 19px 0 10px;
 
   font-weight: 700;
   font-size: 24px;
@@ -520,13 +520,13 @@ input[type="radio"].visually-hidden {
 
 .services__service-description {
   width: 250px;
-  margin: 17px 0;
+  margin: 15px 0;
 
   color: var(--special-black);
 }
 
 .services__service-button {
-  margin-top: 15px;
+  margin-top: 17px;
 }
 
 
@@ -559,7 +559,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about__title {
-  margin: 34px 0 32px;
+  margin: 34px 0 33px;
 
   font-weight: 500;
   font-size: 45px;
@@ -571,7 +571,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about__services-title {
-  margin-top: 42px;
+  margin-top: 41px;
 
   color: var(--special-black);
   font-weight: 700;
@@ -583,7 +583,7 @@ input[type="radio"].visually-hidden {
 .about__services-list li {
   display: flex;
   align-items: center;
-  margin-top: 23px;
+  margin-top: 24px;
 
   color: var(--special-black);
 }
@@ -617,7 +617,7 @@ input[type="radio"].visually-hidden {
 
 .about__properties-list {
   display: flex;
-  margin-top: 30px;
+  margin-top: 31px;
 }
 
 .about__properties-list div {
@@ -630,7 +630,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about__properties-list dt {
-  margin-top: 12px;
+  margin-top: 11px;
 
   color: var(--special-black);
   line-height: 18px;
@@ -678,7 +678,7 @@ input[type="radio"].visually-hidden {
 .partners__list {
   display: grid;
   grid-template-columns: repeat(4, 300px);
-  margin: 44px 0;
+  margin: 45px 0;
 }
 
 .partners__list-item {
@@ -737,7 +737,11 @@ input[type="radio"].visually-hidden {
   grid-column: 1 / -1;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);
-  margin-top: 42px;
+  margin-top: 40px;
+}
+
+.placement--catalog {
+  margin-top: 52px;
 }
 
 .placement__description {
@@ -752,7 +756,7 @@ input[type="radio"].visually-hidden {
 
   background-color: var(--basic-white);
 
-  transform: translateX(-343px);
+  transform: translateX(-342px);
 }
 
 .placement__description-title {
@@ -766,7 +770,7 @@ input[type="radio"].visually-hidden {
 
 .placement__description-address,
 .placement__description-telephone {
-  margin-top: 21px;
+  margin-top: 24px;
   margin-bottom: 15px;
 
   color: var(--special-mist);
@@ -776,7 +780,7 @@ input[type="radio"].visually-hidden {
 .placement__description-button {
   --action-button-padding: 44px;
 
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
 .placement__map {
@@ -792,7 +796,7 @@ input[type="radio"].visually-hidden {
   left: 50%;
 
   display: block;
-  margin-top: -123px;
+  margin-top: -122px;
   margin-left: 102px;
 
   content: url("../img/map-marker.png");
@@ -855,7 +859,7 @@ input[type="radio"].visually-hidden {
 }
 
 .main-footer__promotion-title {
-  margin: 7px 0 0;
+  margin: 9px 0 0;
 
   font-weight: 700;
   font-size: 36px;
@@ -970,12 +974,16 @@ templates
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 42px;
+  column-gap: 40px;
   grid-column: 2;
+  padding: 0 var(--main-padding);
 }
 
 .templates fieldset {
   border: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .templates legend {
@@ -987,8 +995,7 @@ templates
 .templates__filter-form {
   grid-row: 1 / -1;
   grid-column: 1;
-  margin-left: 6px;
-  margin-right: 78px;
+  margin: 0;
 }
 
 .templates__cost-wrapper {
@@ -1001,7 +1008,8 @@ templates
 
 .templates__cost-range-wrapper {
   height: 80px;
-  margin-top: 44px;
+  width: 260px;
+  margin-top: 52px;
 
   background: var(--basic-gray);
   border-radius: 3px;
@@ -1009,7 +1017,7 @@ templates
 
 .templates__fields-cost-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 14px;
 }
 
@@ -1024,6 +1032,10 @@ templates
   align-items: center;
 }
 
+.templates__field-cost:not(:last-child) {
+  margin-right: 34px;
+}
+
 .templates__field-cost label {
   margin-right: 12px;
 
@@ -1033,8 +1045,9 @@ templates
 }
 
 .templates__field-cost input {
-  width: 60px;
+  width: 61px;
   height: 38px;
+  padding: 0;
   padding-left: 18px;
 
   color: var(--special-black);
@@ -1047,11 +1060,11 @@ templates
 }
 
 .templates__grid-wrapper {
-  margin-top: 46px;
+  margin-top: 56px;
 }
 
 .templates__grid-title {
-  margin-bottom: -3px;
+  margin-bottom: 3px;
 }
 
 .templates__field-grid {
@@ -1123,11 +1136,11 @@ templates
 }
 
 .templates__features-wrapper {
-  margin-top: 35px;
+  margin-top: 45px;
 }
 
 .templates__features-title {
-  margin-bottom: -5px;
+  margin-bottom: 1px;
 }
 
 .templates__field-features {
@@ -1169,16 +1182,28 @@ templates
 .templates__filter-submit {
   --action-button-padding: 88px;
 
-  margin-top: 37px;
-  margin-left: 14px;
+  margin-top: 48px;
 }
 
 .templates__sort-form {
   grid-row: 1 / 2;
   grid-column: 2 / 4;
+  margin: 39px 0 30px;
+}
+
+.templates__sort-wrapper {
+  display: flex;
+  padding: 22px 0;
+}
+
+.templates__sort-title {
+  flex-grow: 1;
+  margin-top: -3px;
 }
 
 .templates__field-sort {
+  margin-right: 26px;
+
   color: var(--basic-black-opacity-3);
   font-size: 14px;
   line-height: 18px;
@@ -1190,7 +1215,8 @@ templates
 }
 
 .templates__field-sort input:active + label,
-.templates__field-sort input:focus + label {
+.templates__field-sort input:focus + label,
+.templates__field-sort input:checked + label {
   color: var(--basic-black);
 }
 
@@ -1198,6 +1224,8 @@ templates
   display: block;
   width: 0;
   height: 0;
+  margin-top: 4px;
+  margin-left: 20px;
 
   cursor: pointer;
   border: 5px solid var(--basic-transparent);
@@ -1210,7 +1238,8 @@ templates
 }
 
 .templates__field-sort-direction input:active + label,
-.templates__field-sort-direction input:focus + label {
+.templates__field-sort-direction input:focus + label,
+.templates__field-sort-direction input:checked + label {
   border-top-color: var(--special-peace);
   opacity: 1;
 }
@@ -1233,11 +1262,35 @@ templates
 }
 
 .templates__list-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-row: 2;
   grid-column: 2 / 4;
+  column-gap: 40px;
+  row-gap: 32px;
+}
+
+.templates__item-wrapper {
+  position: relative;
+}
+
+.templates__item-wrapper::before {
+  content: url("../img/browser.svg");
+
+  display: block;
+
+  line-height: 0;
+}
+
+.templates__item-wrapper img {
+  margin: 0 auto;
 }
 
 .templates__item-info {
+  position: absolute;
+
+  display: none;
+
   background-color: var(--basic-gray);
 }
 
@@ -1270,8 +1323,14 @@ templates
 .templates__pagination {
   --side-padding: 20px;
 
-  grid-column: 2;
+  display: flex;
+  grid-column: 2 / 4;
   grid-row: 3;
+  margin-top: 56px;
+}
+
+.templates__pagination li {
+  margin-right: 11px;
 }
 
 .templates__page-button {
