@@ -13,7 +13,7 @@
         <a class="main-header__logo" href="index.html">
           <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс. Переход на главную страницу.">
         </a>
-        <ul class="list-reset">
+        <ul class="main-header__menu list-reset">
           <li>
             <a href="blank.html">Студия</a>
           </li>
@@ -27,7 +27,7 @@
             <a href="blank.html">Контакты</a>
           </li>
         </ul>
-        <a href="blank.html">Корзина</a>
+        <a class="main-header_busket"  href="blank.html">Корзина</a>
       </nav>
     </header>
     <main class="main">
@@ -36,89 +36,93 @@
       </div>
       <section class="templates">
         <h2 class="visually-hidden">Шаблоны</h2>
-        <form method="GET" action="https://echo.htmlacademy.ru/">
-          <fieldset>
-            <legend id="js-templates-cost-title">Стоимость:</legend>
-            <div class="templates__field-cost">
-              <label for="js-cost-min">От</label>
-              <input type="number" name="cost-min" min="0" max="20000" value="0" id="js-cost-min">
-            </div>
-            <div class="templates__field-cost">
-              <label for="js-cost-max">До</label>
-              <input type="number" name="cost-max" min="0" max="20000" value="15000" id="js-cost-max">
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Сетка:</legend>
-            <div class="templates__field-grid">
-              <input type="radio" name="grid" value="adaptive" id="grid-adaptive" checked>
-              <label for="grid-adaptive">Адаптивная</label>
-            </div>
-            <div class="templates__field-grid">
-              <input type="radio" name="grid" value="fixed" id="grid-fixed">
-              <label for="grid-fixed">Фиксированная</label>
-            </div>
-            <div class="templates__field-grid">
-              <input type="radio" name="grid" value="responsive" id="grid-responsive">
-              <label for="grid-responsive">Резиновая</label>
+        <form class="templates__filter-form" method="GET" action="https://echo.htmlacademy.ru/">
+          <fieldset class="templates__cost-wrapper">
+            <legend class="templates__cost-title" id="js-templates-cost-title">Стоимость:</legend>
+            <div class="templates__fields-cost-wrapper">
+              <div class="templates__field-cost">
+                <label for="js-cost-min">От</label>
+                <input type="number" name="cost-min" min="0" max="20000" value="0" id="js-cost-min">
+              </div>
+              <div class="templates__field-cost">
+                <label for="js-cost-max">До</label>
+                <input type="number" name="cost-max" min="0" max="20000" value="15000" id="js-cost-max">
+              </div>
             </div>
           </fieldset>
-          <fieldset>
-            <legend>Особенности:</legend>
+          <fieldset class="templates__grid-wrapper">
+            <legend class="templates__grid-title">Сетка:</legend>
+            <div class="templates__field-grid">
+              <input class="templates__field-grid-input visually-hidden" type="radio" name="grid" value="adaptive" id="grid-adaptive" checked>
+              <label class="templates__field-grid-label" for="grid-adaptive">Адаптивная</label>
+            </div>
+            <div class="templates__field-grid">
+              <input class="templates__field-grid-input visually-hidden" type="radio" name="grid" value="fixed" id="grid-fixed">
+              <label class="templates__field-grid-label" for="grid-fixed">Фиксированная</label>
+            </div>
+            <div class="templates__field-grid">
+              <input class="templates__field-grid-input visually-hidden" type="radio" name="grid" value="responsive" id="grid-responsive">
+              <label class="templates__field-grid-label" for="grid-responsive">Резиновая</label>
+            </div>
+          </fieldset>
+          <fieldset class="templates__features-wrapper">
+            <legend class="templates__features-title">Особенности:</legend>
             <div class="templates__field-features">
-              <input type="checkbox" name="features" value="slider" id="features-slider" checked>
-              <label for="features-slider">Слайдер</label>
+              <input class="templates__field-features-input visually-hidden" type="checkbox" name="features" value="slider" id="features-slider" checked>
+              <label class="templates__field-features-label" for="features-slider">Слайдер</label>
             </div>
             <div class="templates__field-features">
-              <input type="checkbox" name="features" value="advantage" id="features-advantage">
-              <label for="features-advantage">Блок преимуществ</label>
+              <input class="templates__field-features-input visually-hidden" type="checkbox" name="features" value="advantage" id="features-advantage">
+              <label class="templates__field-features-label" for="features-advantage">Блок преимуществ</label>
             </div>
             <div class="templates__field-features">
-              <input type="checkbox" name="features" value="news" id="features-news" checked>
-              <label for="features-news">Новости</label>
+              <input class="templates__field-features-input visually-hidden" type="checkbox" name="features" value="news" id="features-news" checked>
+              <label class="templates__field-features-label" for="features-news">Новости</label>
             </div>
             <div class="templates__field-features">
-              <input type="checkbox" name="features" value="gallery" id="features-gallery">
-              <label for="features-gallery">Галерея</label>
+              <input class="templates__field-features-input visually-hidden" type="checkbox" name="features" value="gallery" id="features-gallery">
+              <label class="templates__field-features-label" for="features-gallery">Галерея</label>
             </div>
             <div class="templates__field-features">
-              <input type="checkbox" name="features" value="basket" id="features-basket">
-              <label for="features-basket">Корзина</label>
+              <input class="templates__field-features-input visually-hidden" type="checkbox" name="features" value="basket" id="features-basket">
+              <label class="templates__field-features-label" for="features-basket">Корзина</label>
             </div>
           </fieldset>
           <button class="templates__filter-submit action-button action-button--gray" type="submit">Показать</button>
         </form>
-        <form>
+        <form class="templates__sort-form">
           <fieldset>
-            <legend>Сортировать:</legend>
-            <div class="templates__field-sort">
-              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-cost" checked>
-              <label for="sort-type-cost">По цене</label>
-            </div>
-            <div class="templates__field-sort">
-              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-kind">
-              <label for="sort-type-kind">По типу</label>
-            </div>
-            <div class="templates__field-sort">
-              <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-name">
-              <label for="sort-type-name">По названию</label>
-            </div>
-            <div class="templates__field-sort-direction">
-              <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-descending" checked>
-              <label for="sort-direction-descending">
-                <span class="visually-hidden">По убыванию</span>
-              </label>
-            </div>
-            <div class="templates__field-sort-direction templates__field-sort-direction--ascending">
-              <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-ascending">
-              <label for="sort-direction-ascending">
-                <span class="visually-hidden">По возрастанию</span>
-              </label>
+            <div class="templates__sort-wrapper">
+              <legend class="templates__sort-title">Сортировать:</legend>
+              <div class="templates__field-sort">
+                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-cost" checked>
+                <label for="sort-type-cost">По цене</label>
+              </div>
+              <div class="templates__field-sort">
+                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-kind">
+                <label for="sort-type-kind">По типу</label>
+              </div>
+              <div class="templates__field-sort">
+                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-name">
+                <label for="sort-type-name">По названию</label>
+              </div>
+              <div class="templates__field-sort-direction">
+                <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-descending" checked>
+                <label for="sort-direction-descending">
+                  <span class="visually-hidden">По убыванию</span>
+                </label>
+              </div>
+              <div class="templates__field-sort-direction templates__field-sort-direction--ascending">
+                <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-ascending">
+                <label for="sort-direction-ascending">
+                  <span class="visually-hidden">По возрастанию</span>
+                </label>
+              </div>
             </div>
           </fieldset>
         </form>
-        <ul class="list-reset">
-          <li>
+        <ul class="templates__list-items list-reset">
+          <li class="templates__item-wrapper">
             <img src="../img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Sedona</a>
@@ -126,7 +130,7 @@
               <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
-          <li>
+          <li class="templates__item-wrapper">
             <img src="../img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Pink App</a>
@@ -134,7 +138,7 @@
               <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
-          <li>
+          <li class="templates__item-wrapper">
             <img src="../img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Barbershop</a>
@@ -142,7 +146,7 @@
               <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
-          <li>
+          <li class="templates__item-wrapper">
             <img src="../img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Mishka</a>
@@ -150,7 +154,7 @@
               <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
-          <li>
+          <li class="templates__item-wrapper">
             <img src="../img/template-aPlus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">A Plus</a>
@@ -158,7 +162,7 @@
               <button class="templates__item-button action-button" type="button">9 900 ₽</button>
             </div>
           </li>
-          <li>
+          <li class="templates__item-wrapper">
             <img src="../img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">КВАСТ</a>
@@ -182,15 +186,13 @@
           </li>
         </ul>
       </section>
-      <section class="placement">
+      <section class="placement placement--catalog">
         <h2 class="visually-hidden">Наше расположение</h2>
-        <div class="placement__description-wrapper">
-          <div class="placement__description">
-            <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
-            <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
-            <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
-            <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
-          </div>
+        <div class="placement__description">
+          <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
+          <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+          <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+          <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
         </div>
         <div class="placement__map">
           <img src="../img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
@@ -198,7 +200,7 @@
       </section>
     </main>
     <footer class="main-footer">
-      <ul class="list-reset">
+      <ul class="main-footer__links-list list-reset">
         <li>
           <a class="main-footer__link" href="blank.html">
             <img src="../img/vk-icon.svg" width="26" height="15" alt="Перейти во Вконтакте">
@@ -215,12 +217,13 @@
           </a>
         </li>
       </ul>
-      <div>
+      <div class="main-footer__promotion-wrapper">
         <p class="main-footer__promotion-title">Давайте дружить, это выгодно!</p>
         <p class="main-footer__promotion-description">Скидка 10% для друзей из социальных сетей.</p>
       </div>
     </footer>
 
     <script src="../js/app.min.js"></script>
+
   </body>
 </html>
