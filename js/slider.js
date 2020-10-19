@@ -42,7 +42,7 @@ if (sliderContainer) {
     return buttonWrapper;
   };
 
-  const header = sliderContainer.querySelector(`#principles__header-js`);
+  const beforeInsertBlock = sliderContainer.querySelector(`#principles__slider-js`);
   const slides = sliderContainer.querySelectorAll(`.principles__slide`);
 
   const buttonsContainer = createElement(`<ul class="principles__control list-reset"></ul>`);
@@ -54,5 +54,5 @@ if (sliderContainer) {
   });
 
 
-  header.after(buttonsContainer);
+  beforeInsertBlock.after(buttonsContainer);
 }
