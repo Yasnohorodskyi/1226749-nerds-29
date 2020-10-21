@@ -152,7 +152,9 @@ input[type="radio"].visually-hidden {
 
 
 .action-button {
+  box-sizing: border-box;
   display: inline-block;
+  max-width: var(--action-button-max-width, 100%);
   margin: 0;
   padding: 17px var(--action-button-padding, 40px) 15px;
 
@@ -160,12 +162,14 @@ input[type="radio"].visually-hidden {
   font-weight: 500;
   line-height: 18px;
   text-align: center;
+  text-overflow: ellipsis;
   text-transform: uppercase;
 
   cursor: pointer;
   background-color: var(--red-1);
   border: none;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 .action-button:hover {
@@ -245,6 +249,8 @@ input[type="radio"].visually-hidden {
 
 .main-header__logo {
   grid-area: logo;
+  width: 160px;
+  height: 65px;
 }
 
 .main-header__logo[href]:active {
@@ -340,8 +346,7 @@ input[type="radio"].visually-hidden {
 
   display: flex;
   flex-wrap: wrap;
-
-  transform: translateX(-50%);
+  margin-left: -44px;
 }
 
 .principles__control li:not(:last-child) {
@@ -386,7 +391,12 @@ input[type="radio"].visually-hidden {
   right: 23px;
   bottom: 0;
 
+  max-width: 760px;
+  max-height: 431px;
+
   line-height: 0;
+
+  overflow: hidden;
 }
 
 .principles__slide--slide-1::before {
@@ -409,8 +419,14 @@ input[type="radio"].visually-hidden {
   display: block;
 }
 
-.principles__slide-title {
+.principles__slide-content {
+  position: relative;
+  z-index: 1;
+
   width: 516px;
+}
+
+.principles__slide-title {
   margin: 45px 0 0;
 
   font-weight: 500;
@@ -421,6 +437,7 @@ input[type="radio"].visually-hidden {
 .principles__slide-description {
   margin: 37px 0 26px;
 
+  color: var(--black-2);
   font-size: 16px;
   line-height: 25px;
 }
@@ -432,7 +449,7 @@ input[type="radio"].visually-hidden {
 .principles__slide-button {
   --action-button-padding: 55px;
 
-  margin-bottom: 70px;
+  margin-bottom: 63px;
 }
 
 
@@ -444,31 +461,48 @@ input[type="radio"].visually-hidden {
 
 
 .services {
-  grid-column: 2;
-  margin-top: 60px;
+  box-sizing: border-box;
+  width: var(--main-width);
+  margin: 0 auto;
+  padding: 10px var(--main-padding);
 }
 
 .services__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: var(--main-padding);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+
+.services__list-item {
+  width: 300px;
+}
+
+.services__list-item:not(:nth-child(3n)) {
+  margin-right: 100px;
+}
+
+.services__list-item::before {
+  display: block;
+  width: 300px;
+  height: 146px;
+
+  overflow: hidden;
 }
 
 .services__list-item--service-1::before {
-  content: url("../img/services-item-1.png");
+  content: url("/img/services-item-1.png");
 }
 
 .services__list-item--service-2::before {
-  content: url("../img/services-item-2.png");
+  content: url("/img/services-item-2.png");
 }
 
 .services__list-item--service-3::before {
-  content: url("../img/services-item-3.png");
+  content: url("/img/services-item-3.png");
 }
 
 .services__service-title {
-  margin: 19px 0 10px;
+  margin: 25px 0 0;
 
   font-weight: 700;
   font-size: 24px;
@@ -477,14 +511,14 @@ input[type="radio"].visually-hidden {
 }
 
 .services__service-description {
-  width: 250px;
-  margin: 15px 0;
+  width: 90%;
+  margin: 17px 0 31px;
 
-  color: var(--special-black);
+  color: var(--black-2);
 }
 
 .services__service-button {
-  margin-top: 17px;
+  margin-bottom: 20px;
 }
 
 
