@@ -751,34 +751,31 @@ input[type="radio"].visually-hidden {
 .placement {
   position: relative;
 
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(3, auto);
-  margin-top: 40px;
-}
-
-.placement--catalog {
-  margin-top: 52px;
+  margin: 80px 0 0;
 }
 
 .placement__description {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
 
   box-sizing: border-box;
-  grid-row: 2;
-  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 319px;
-  padding: 49px 50px 47px;
+  padding: 20px 20px 46px 50px;
 
-  background-color: var(--basic-white);
+  background-color: var(--white-1);
 
-  transform: translateX(-342px);
+  transform: translate(-580px, -50%);
 }
 
 .placement__description-title {
-  margin: 0;
+  margin: 27px 0 0;
 
   font-weight: 700;
   font-size: 18px;
@@ -788,36 +785,44 @@ input[type="radio"].visually-hidden {
 
 .placement__description-address,
 .placement__description-telephone {
-  margin-top: 24px;
-  margin-bottom: 15px;
-
-  color: var(--special-mist);
+  color: var(--dark-gray-2);
+  font-size: 16px;
   line-height: 18px;
+}
+
+.placement__description-address {
+  margin: 23px 0 0;
+}
+
+.placement__description-telephone {
+  margin: 18px 0 0;
 }
 
 .placement__description-button {
   --action-button-padding: 44px;
 
-  margin-top: 34px;
+  margin: 37px 0 0;
 }
 
 .placement__map {
   position: relative;
-
-  grid-row: 1 / -1;
-  grid-column: 1 / -1;
+  z-index: 1;
 }
 
 .placement__map::after {
+  content: url("/img/map-marker.png");
+
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
 
   display: block;
-  margin-top: -122px;
-  margin-left: 102px;
+  width: 231px;
+  height: 190px;
 
-  content: url("../img/map-marker.png");
+  overflow: hidden;
+
+  transform: translate(102px, 86px);
 }
 
 .placement__map img {
