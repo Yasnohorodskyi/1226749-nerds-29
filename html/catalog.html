@@ -3,14 +3,14 @@
   <head>
     <title>Магазин</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.min.css">
   </head>
   <body>
     <header class="main-header">
       <nav class="main-header__navigation">
         <a class="main-header__logo" href="index.html">
-          <img src="../img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс. Переход на главную страницу.">
+          <img src="/img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс. Переход на главную страницу.">
         </a>
         <ul class="main-header__menu list-reset">
           <li>
@@ -89,40 +89,21 @@
           </fieldset>
           <button class="templates__filter-submit action-button action-button--gray" type="submit">Показать</button>
         </form>
-        <form class="templates__sort-form">
-          <fieldset>
-            <div class="templates__sort-wrapper">
-              <legend class="templates__sort-title">Сортировать:</legend>
-              <div class="templates__field-sort">
-                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-cost" checked>
-                <label for="sort-type-cost">По цене</label>
-              </div>
-              <div class="templates__field-sort">
-                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-kind">
-                <label for="sort-type-kind">По типу</label>
-              </div>
-              <div class="templates__field-sort">
-                <input class="visually-hidden" type="radio" name="sort-type" id="sort-type-name">
-                <label for="sort-type-name">По названию</label>
-              </div>
-              <div class="templates__field-sort-direction">
-                <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-descending" checked>
-                <label for="sort-direction-descending">
-                  <span class="visually-hidden">По убыванию</span>
-                </label>
-              </div>
-              <div class="templates__field-sort-direction templates__field-sort-direction--ascending">
-                <input class="visually-hidden" type="radio" name="sort-direction" id="sort-direction-ascending">
-                <label for="sort-direction-ascending">
-                  <span class="visually-hidden">По возрастанию</span>
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </form>
+        <div class="templates__sort-wrapper">
+          <p class="templates__sort-title">Сортировать:</p>
+          <button type="button">По цене</button>
+          <button type="button">По типу</button>
+          <button type="button">По названию</button>
+          <button type="button">
+            <span class="visually-hidden">По убыванию</span>
+          </button>
+          <button type="button">
+            <span class="visually-hidden">По возрастанию</span>
+          </button>
+        </div>
         <ul class="templates__list-items list-reset">
           <li class="templates__item-wrapper">
-            <img src="../img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
+            <img src="/img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Sedona</a>
               <p class="templates__item-description">Информационный сайт для туристов</p>
@@ -130,7 +111,7 @@
             </div>
           </li>
           <li class="templates__item-wrapper">
-            <img src="../img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
+            <img src="/img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Pink App</a>
               <p class="templates__item-description">Продуктовый лендинг приложения для iOS и Android</p>
@@ -138,7 +119,7 @@
             </div>
           </li>
           <li class="templates__item-wrapper">
-            <img src="../img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
+            <img src="/img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Barbershop</a>
               <p class="templates__item-description">Сайт салона красоты. Для мужчин, да.</p>
@@ -146,7 +127,7 @@
             </div>
           </li>
           <li class="templates__item-wrapper">
-            <img src="../img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
+            <img src="/img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">Mishka</a>
               <p class="templates__item-description">Интернет-магазин вязаных игрушек</p>
@@ -154,7 +135,7 @@
             </div>
           </li>
           <li class="templates__item-wrapper">
-            <img src="../img/template-aPlus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
+            <img src="/img/template-aPlus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">A Plus</a>
               <p class="templates__item-description">Лендинг курсов повышения квалификации</p>
@@ -162,7 +143,7 @@
             </div>
           </li>
           <li class="templates__item-wrapper">
-            <img src="../img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
+            <img src="/img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
             <div class="templates__item-info">
               <a class="templates__item-title" href="blank.html">КВАСТ</a>
               <p class="templates__item-description">Промо-сайт производителя крафтового кваса</p>
@@ -185,7 +166,7 @@
           </li>
         </ul>
       </section>
-      <section class="placement placement--catalog">
+      <section class="placement">
         <h2 class="visually-hidden">Наше расположение</h2>
         <div class="placement__description">
           <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
@@ -194,7 +175,7 @@
           <a class="placement__description-button action-button" href="blank.html">Напишите нам</a>
         </div>
         <div class="placement__map">
-          <img src="../img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
+          <img src="/img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
         </div>
       </section>
     </main>
@@ -202,17 +183,17 @@
       <ul class="main-footer__links-list list-reset">
         <li>
           <a class="main-footer__link" href="blank.html">
-            <img src="../img/vk-icon.svg" width="26" height="15" alt="Перейти во Вконтакте">
+            <img src="/img/vk-icon.svg" width="26" height="15" alt="Перейти во Вконтакте">
           </a>
         </li>
         <li>
           <a class="main-footer__link" href="blank.html">
-            <img src="../img/fb-icon.svg" width="12" height="22" alt="Перейти в Facebook">
+            <img src="/img/fb-icon.svg" width="12" height="22" alt="Перейти в Facebook">
           </a>
         </li>
         <li>
           <a class="main-footer__link" href="blank.html">
-            <img src="../img/insta-icon.svg" width="21" height="21" alt="Перейти в Instagram">
+            <img src="/img/insta-icon.svg" width="21" height="21" alt="Перейти в Instagram">
           </a>
         </li>
       </ul>
@@ -222,7 +203,29 @@
       </div>
     </footer>
 
-    <script src="../js/app.min.js"></script>
+    <section class="popup">
+      <h2 class="popup__title">Напишите нам</h2>
+      <form method="POST" action="https://echo.htmlacademy.ru/">
+        <button class="popup__close-button" type="button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <div class="popup__field">
+          <label for="popup-field-name">Ваше имя:</label>
+          <input type="text" name="name" id="popup-field-name" placeholder="Имя Фамилия">
+        </div>
+        <div class="popup__field">
+          <label for="popup-field-email">Ваш email:</label>
+          <input type="email" name="email" id="popup-field-email" placeholder="email@example.com ">
+        </div>
+        <div class="popup__field">
+          <label for="popup-field-letter">Текст письма:</label>
+          <textarea name="letter" id="popup-field-letter" placeholder="В свободной форме"></textarea>
+        </div>
+        <button class="popup__submit action-button" type="submit">Отправить</button>
+      </form>
+    </section>
+
+    <script src="/js/app.min.js"></script>
 
   </body>
 </html>
