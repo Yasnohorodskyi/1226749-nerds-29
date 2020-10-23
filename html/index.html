@@ -168,23 +168,23 @@
       </div>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup--no-js">
       <h2 class="popup__title">Напишите нам</h2>
-      <form method="POST" action="https://echo.htmlacademy.ru/">
-        <button class="popup__close-button" type="button">
-          <span class="visually-hidden">Закрыть</span>
-        </button>
-        <div class="popup__field">
+      <button class="popup__close-button" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+      <form class="popup__form" method="POST" action="https://echo.htmlacademy.ru/">
+        <div class="popup__field popup__field--name">
           <label for="popup-field-name">Ваше имя:</label>
-          <input type="text" name="name" id="popup-field-name" placeholder="Имя Фамилия">
+          <input type="text" name="name" id="popup-field-name" placeholder="Имя Фамилия" required>
         </div>
-        <div class="popup__field">
+        <div class="popup__field popup__field--email">
           <label for="popup-field-email">Ваш email:</label>
-          <input type="email" name="email" id="popup-field-email" placeholder="email@example.com ">
+          <input type="email" name="email" id="popup-field-email" placeholder="email@example.com" required>
         </div>
-        <div class="popup__field">
+        <div class="popup__field popup__field--textarea">
           <label for="popup-field-letter">Текст письма:</label>
-          <textarea name="letter" id="popup-field-letter" placeholder="В свободной форме"></textarea>
+          <textarea name="letter" id="popup-field-letter" placeholder="В свободной форме" required></textarea>
         </div>
         <button class="popup__submit action-button" type="submit">Отправить</button>
       </form>

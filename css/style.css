@@ -3,6 +3,7 @@
   --black-1: rgb(var(--black-1-base));  /*  #000000; */
   --black-1-10: rgba(var(--black-1-base), 0.1); /*  #000000; 10% */
   --black-1-30: rgba(var(--black-1-base), 0.3); /*  #000000; 30% */
+  --black-1-40: rgba(var(--black-1-base), 0.4); /*  #000000; 40% */
   --black-2: #283136;
   --black-3: #231F20;
   --white-1-base: 255, 255, 255;
@@ -845,7 +846,7 @@ input[type="radio"].visually-hidden {
   grid-template-areas: "left right";
   width: var(--main-width);
   margin: 0 auto;
-  padding: 20px var(--main-padding);
+  padding: 20px var(--main-padding) 70px;
 }
 
 .main-footer__links-list {
@@ -909,85 +910,174 @@ input[type="radio"].visually-hidden {
 */
 
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+
+  box-sizing: border-box;
+  display: none;
+  width: 960px;
+  margin: -6px 0 0;
+  padding: 50px 100px 85px;
+
+  background-color: var(--white-1);
+  box-shadow: 0 20px 40px var(--black-1-40);
+
+  transform: translate(-50%, -50%);
+}
+
+.popup--no-js {
+  display: block;
+}
+
+.popup--opened {
+  display: block;
+}
+
 .popup__title {
+  margin: 10px 0 0;
+
   font-weight: 700;
   font-size: 45px;
   line-height: 53px;
 }
 
 .popup__close-button {
-  display: block;
+  position: absolute;
+  top: 76px;
+  right: 90px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 21px;
   height: 21px;
 
-  cursor: pointer;
-  background-color: transparent;
-  background-image: url("../img/close-cross.svg");
+  background-color: var(--transparent);
   border: none;
+  cursor: pointer;
   opacity: 0.3;
+  overflow: hidden;
+}
+
+.popup__close-button::before,
+.popup__close-button::after {
+  content: "";
+
+  position: absolute;
+
+  display: block;
+  width: 26px;
+  height: 4px;
+
+  background-color: var(--red-1);
+  border-radius: 1px;
+}
+
+.popup__close-button::before {
+  transform: rotate(45deg);
+}
+
+.popup__close-button::after {
+  transform: rotate(-45deg);
 }
 
 .popup__close-button:hover {
   opacity: 1;
 }
 
-.popup__close-button:active,
-.popup__close-button:focus {
+.popup__close-button:active {
   opacity: 0.1;
-  outline: none;
+}
+
+.popup__form {
+  display: grid;
+  column-gap: 40px;
+  row-gap: 34px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "name email"
+    "textarea textarea"
+    "submit submit";
+  margin: 37px 0 0;
+}
+
+.popup__field {
+  display: flex;
+  flex-direction: column;
 }
 
 .popup__field label {
-  font-weight: bold;
+  font-weight: 700;
   line-height: 18px;
 }
 
 .popup__field input,
 .popup__field textarea {
-  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 15px;
+  margin: 9px 0 0;
 
+  color: var(--dark-gray-3);
   line-height: 18px;
 
-  background-color: var(--basic-white);
-  border: 2px solid var(--basic-dust);
+  border: 2px solid var(--gray-8);
   border-radius: 3px;
-}
-
-.popup__field textarea {
-  resize: none;
 }
 
 .popup__field input:hover,
 .popup__field textarea:hover {
-  border-color: var(--special-dust);
+  border-color: var(--gray-6);
+}
+
+.popup__field input:focus,
+.popup__field textarea:focus {
+  color: var(--dark-gray-3);
+
+  border-color: var(--black-1);
 }
 
 .popup__field input:invalid,
 .popup__field textarea:invalid {
-  border-color: var(--special-red);
+  color: var(--red-2);
+
+  border-color: var(--red-2);
 }
 
-.popup__field input::placeholder,
-.popup__field textarea::placeholder {
-  color: var(--decorated-black);
-
-  opacity: 0.5;
+.popup__field input {
+  height: 49px;
 }
 
-.popup__field input:focus::placeholder,
-.popup__field textarea:focus::placeholder {
-  opacity: 1;
+.popup__field textarea {
+  height: 118px;
+  padding: 15px;
 }
 
-.popup__field input:invalid::placeholder,
-.popup__field textarea:invalid::placeholder {
-  color: var(--special-red);
+.popup__field--name {
+  grid-area: name;
+}
 
-  opacity: 1;
+.popup__field--email {
+  grid-area: email;
+}
+
+.popup__field--textarea {
+  grid-area: textarea;
+}
+
+.popup__field--textarea textarea {
+  resize: none;
 }
 
 .popup__submit {
-  --action-button-padding: 83px;
+  --action-button-padding: 85px;
+
+  grid-area: submit;
+  justify-self: start;
+  margin-top: 13px;
 }
 
 
