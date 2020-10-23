@@ -917,7 +917,7 @@ input[type="radio"].visually-hidden {
   z-index: 999;
 
   box-sizing: border-box;
-  display: none;
+  display: block;
   width: 960px;
   margin: -6px 0 0;
   padding: 50px 100px 85px;
@@ -925,15 +925,27 @@ input[type="radio"].visually-hidden {
   background-color: var(--white-1);
   box-shadow: 0 20px 40px var(--black-1-40);
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-100vh - 100%));
+}
+
+.popup--error {
+  animation: popup-shake 0.6s;
 }
 
 .popup--no-js {
+  position: relative;
+  top: 0;
+  left: 0;
+
   display: block;
+  margin: 0 auto;
+
+  transform: none;
 }
 
 .popup--opened {
-  display: block;
+  transform: translate(-50%, -50%);
+  transition: transform 1s ease-in-out;
 }
 
 .popup__title {
@@ -1080,6 +1092,27 @@ input[type="radio"].visually-hidden {
   margin-top: 13px;
 }
 
+@keyframes popup-shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-45%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-55%, -50%);
+  }
+}
 
 /*
 
