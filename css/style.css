@@ -1655,3 +1655,36 @@ templates
 .pagination__page--next {
   --action-button-padding: 78px;
 }
+
+
+/*
+
+    blank
+
+*/
+
+
+.blank {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.blank p,
+.blank a {
+  color: var(--black-2);
+}
+
+.blank a {
+  font-weight: 700;
+}
+
+.blank a:hover {
+  color: var(--red-1);
+}
+
+.blank a:active {
+  color: var(--black-2);
+
+  opacity: 0.3;
+}
