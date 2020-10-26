@@ -115,6 +115,10 @@ a {
   text-decoration: none;
 }
 
+a:not([href]) {
+  cursor: default;
+}
+
 
 /*
 
@@ -340,10 +344,14 @@ input[type="radio"].visually-hidden {
 }
 
 .main-header_basket::before {
-  content: url("/img/basket-icon.svg");
+  content: url("../img/basket-icon.svg");
 
+  width: 15px;
+  height: 21px;
   margin-top: 2px;
   margin-right: 25px;
+
+  overflow: hidden;
 }
 
 
@@ -393,9 +401,14 @@ input[type="radio"].visually-hidden {
   background-color: var(--white-1);
   border: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-.principles__control-button--active::after {
+.principles__control-button:hover {
+  box-shadow: 0 2px 5px 0 var(--black-1);
+}
+
+.principles__control-button::after {
   content: "";
 
   box-sizing: border-box;
@@ -403,8 +416,16 @@ input[type="radio"].visually-hidden {
   width: 8px;
   height: 8px;
 
-  border: 2px solid var(--gray-3);
+  border: none;
   border-radius: 50%;
+}
+
+.principles__control-button:hover::after {
+  background-color: var(--light-gray-1);
+}
+
+.principles__control-button--active::after {
+  border: 2px solid var(--gray-3);
 }
 
 .principles__slide {
@@ -428,15 +449,15 @@ input[type="radio"].visually-hidden {
 }
 
 .principles__slide--slide-1::before {
-  content: url("/img/nerds-index-slide-1.png");
+  content: url("../img/nerds-index-slide-1.png");
 }
 
 .principles__slide--slide-2::before {
-  content: url("/img/nerds-index-slide-2.png");
+  content: url("../img/nerds-index-slide-2.png");
 }
 
 .principles__slide--slide-3::before {
-  content: url("/img/nerds-index-slide-3.png");
+  content: url("../img/nerds-index-slide-3.png");
 }
 
 .principles__slide--active {
@@ -518,15 +539,15 @@ input[type="radio"].visually-hidden {
 }
 
 .services__list-item--service-1::before {
-  content: url("/img/services-item-1.png");
+  content: url("../img/services-item-1.png");
 }
 
 .services__list-item--service-2::before {
-  content: url("/img/services-item-2.png");
+  content: url("../img/services-item-2.png");
 }
 
 .services__list-item--service-3::before {
-  content: url("/img/services-item-3.png");
+  content: url("../img/services-item-3.png");
 }
 
 .services__service-title {
@@ -637,7 +658,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about__right-column-wrapper::before {
-  content: url("/img/nerds-illustration.png");
+  content: url("../img/nerds-illustration.png");
 
   display: block;
   max-width: 360px;
@@ -845,7 +866,7 @@ input[type="radio"].visually-hidden {
 }
 
 .placement__img-map-wrapper::after {
-  content: url("/img/map-marker.png");
+  content: url("../img/map-marker.png");
 
   position: absolute;
   top: 0;
@@ -982,7 +1003,7 @@ input[type="radio"].visually-hidden {
 
 .popup--opened {
   transform: translate(-50%, -50%);
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .popup__title {
@@ -1388,7 +1409,7 @@ templates
   min-width: 25px;
   margin-right: 12px;
 
-  background-image: url("/img/checkbox-on.svg");
+  background-image: url("../img/checkbox-on.svg");
   border: none;
 }
 
@@ -1512,6 +1533,8 @@ templates
 
 .templates-list__item {
   position: relative;
+
+  min-height: 619px;
 
   border-radius: 5px;
   overflow: hidden;

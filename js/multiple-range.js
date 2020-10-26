@@ -1,16 +1,8 @@
 'use strict';
 
-const Point = {
-  MIN: {
-    propName: `--min-percent`,
-    costLimit: 0,
-    currentPercent: 0,
-  },
-  MAX: {
-    propName: `--max-percent`,
-    costLimit: 22059,
-    currentPercent: 68,
-  },
+const KeyCode = {
+  left: `ArrowLeft`,
+  right: `ArrowRight`,
 };
 
 const prevElement = document.querySelector(`#filter-panel__cost-title-js`);
@@ -24,22 +16,7 @@ const createElement = (template) => {
   return wrapper.firstElementChild;
 };
 
-const calculateCostValue = (point) => {
-  return Math.round(Point.MAX.costLimit * point.currentPercent / 100);
-};
-
-const changeCostValue = (point, newValue) => {
-  if (point === Point.MIN) {
-    minCost.value = newValue;
-  } else {
-    maxCost.value = newValue;
-  }
-};
-
 if (prevElement && minCost && maxCost) {
-  let currentMinValue = calculateCostValue(Point.MIN);
-  let currentMaxValue = calculateCostValue(Point.MAX);
-
   const markup = (`
     <div class="filter-panel__cost-range">
       <div class="filter-panel__cost-range-line">
@@ -62,50 +39,99 @@ if (prevElement && minCost && maxCost) {
   const pointMin = rangeBlock.querySelector(`#filter-panel__cost-point-min-js`);
   const pointMax = rangeBlock.querySelector(`#filter-panel__cost-point-max-js`);
 
-  const changePropValue = (point) => {
-    rangeBlock.style.setProperty(point.propName, `${point.currentPercent}%`);
+  const CostObj = {
+    MIN: {
+      propName: `--min-percent`,
+      limitCostValue: 0,
+      limitPropValue: 0,
+      initPropValue: 0,
+      input: minCost,
+      point: pointMin,
+    },
+    MAX: {
+      propName: `--max-percent`,
+      limitCostValue: 22059,
+      limitPropValue: 100,
+      initPropValue: 68,
+      input: maxCost,
+      point: pointMax,
+    },
   };
 
-  const changeCurrentPercent = (point, newValue) => {
-    point.currentPercent = newValue;
+  const getCurrentPropValue = (costObj) => {
+    return parseFloat(
+        rangeBlock.style.getPropertyValue(costObj.propName).split(`%`)[0]
+    );
+  };
 
-    if (point === Point.MIN && newValue > Point.MAX.currentPercent) {
-      Point.MAX.currentPercent = newValue;
-      changePropValue(Point.MAX);
-      changeCostValue(Point.MAX, calculateCostValue(Point.MAX));
-    } else if (point === Point.MAX && newValue < Point.MIN.currentPercent) {
-      Point.MIN.currentPercent = newValue;
-      changePropValue(Point.MIN);
-      changeCostValue(Point.MIN, calculateCostValue(Point.MIN));
+  const calculatePropValue = (costObj) => {
+    const newCostValue = parseInt(costObj.input.value, 10);
+
+    if (Number.isNaN(newCostValue)) {
+      return costObj.limitPropValue;
+    }
+
+    return newCostValue / CostObj.MAX.limitCostValue * CostObj.MAX.limitPropValue;
+  };
+
+  const calculateCostValue = (costObj) => {
+    const currentPropValue = getCurrentPropValue(costObj);
+
+    return Math.round(
+        CostObj.MAX.limitCostValue * currentPropValue / CostObj.MAX.limitPropValue
+    );
+  };
+
+  const changeCostValue = (costObj) => {
+    const newCostValue = calculateCostValue(costObj);
+
+    if (parseFloat(costObj.input.value) !== newCostValue) {
+      costObj.input.value = newCostValue;
     }
   };
 
-  const onChangeCostValue = (evt) => {
-    const point = evt.target === minCost
-      ? Point.MIN
-      : Point.MAX;
+  const makeSynchronization = (costObj, newPropValue) => {
+    rangeBlock.style.setProperty(costObj.propName, `${newPropValue}%`);
+    changeCostValue(costObj);
+  };
 
-    const newPercent = Math.round(
-        parseInt(evt.target.value, 10) / Point.MAX.costLimit * 100
-    );
-    changeCurrentPercent(point, newPercent);
-    changePropValue(point);
+  const changePropValue = (costObj, newPropValue) => {
+    newPropValue = newPropValue ? newPropValue : calculatePropValue(costObj);
+
+    if (newPropValue < CostObj.MIN.limitPropValue) {
+      newPropValue = CostObj.MIN.limitPropValue;
+    } else if (newPropValue > CostObj.MAX.limitPropValue) {
+      newPropValue = CostObj.MAX.limitPropValue;
+    }
+
+    if (costObj === CostObj.MIN && newPropValue > getCurrentPropValue(CostObj.MAX)) {
+      makeSynchronization(CostObj.MAX, newPropValue);
+    } else if (costObj === CostObj.MAX && newPropValue < getCurrentPropValue(CostObj.MIN)) {
+      makeSynchronization(CostObj.MIN, newPropValue);
+    }
+
+    makeSynchronization(costObj, newPropValue);
+  };
+
+  const onChangeCostValue = (evt) => {
+    if (evt.target === CostObj.MIN.input) {
+      changePropValue(CostObj.MIN);
+    } else {
+      changePropValue(CostObj.MAX);
+    }
   };
 
   const onPointMouseDown = (downEvt) => {
-    const point = downEvt.target === pointMin
-      ? Point.MIN
-      : Point.MAX;
+    const costObj = downEvt.target === CostObj.MIN.point
+      ? CostObj.MIN
+      : CostObj.MAX;
     const lineWidth = rangeLine.clientWidth;
     const leftOffset = rangeLine.getBoundingClientRect().left;
 
     const onMovePoint = (mouseEvt) => {
-      const currentValue = Math.round((mouseEvt.x - leftOffset) / lineWidth * 100);
-      if (currentValue >= 0 && currentValue <= 100) {
-        changePropValue(point);
-        changeCurrentPercent(point, currentValue);
-        changeCostValue(point, calculateCostValue(point));
-      }
+      const newPropValue = Math.round((mouseEvt.x - leftOffset) / lineWidth * 100);
+
+      changePropValue(costObj, newPropValue);
     };
 
     const onUpPoint = () => {
@@ -117,17 +143,29 @@ if (prevElement && minCost && maxCost) {
     document.addEventListener(`mouseup`, onUpPoint);
   };
 
-  changePropValue(Point.MIN);
-  changePropValue(Point.MAX);
+  const onPointKeyDown = (keyDownEvt) => {
+    const costObj = keyDownEvt.target === CostObj.MIN.point
+      ? CostObj.MIN
+      : CostObj.MAX;
+
+    if (keyDownEvt.code === KeyCode.left) {
+      changePropValue(costObj, getCurrentPropValue(costObj) - 1);
+    } else if (keyDownEvt.code === KeyCode.right) {
+      changePropValue(costObj, getCurrentPropValue(costObj) + 1);
+    }
+  };
+
+  makeSynchronization(CostObj.MIN, CostObj.MIN.initPropValue);
+  makeSynchronization(CostObj.MAX, CostObj.MAX.initPropValue);
+
+  minCost.addEventListener(`input`, onChangeCostValue);
+  maxCost.addEventListener(`input`, onChangeCostValue);
 
   pointMin.addEventListener(`mousedown`, onPointMouseDown);
   pointMax.addEventListener(`mousedown`, onPointMouseDown);
 
-  changeCostValue(Point.MIN, currentMinValue);
-  changeCostValue(Point.MAX, currentMaxValue);
-
-  minCost.addEventListener(`input`, onChangeCostValue);
-  maxCost.addEventListener(`input`, onChangeCostValue);
+  pointMin.addEventListener(`keydown`, onPointKeyDown);
+  pointMax.addEventListener(`keydown`, onPointKeyDown);
 
   prevElement.after(rangeBlock);
 }

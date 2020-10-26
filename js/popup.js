@@ -47,7 +47,9 @@ const submitForm = (evt) => {
   popup.classList.remove(ERROR_CLASS);
 
   if (isValidFormData()) {
-    fetch(URL)
+    fetch(URL, {
+      method: `POST`,
+    })
       .then((response) => {
         if (!response.ok) {
           popup.classList.add(ERROR_CLASS);

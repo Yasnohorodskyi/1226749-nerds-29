@@ -37,5 +37,3 @@ if (mapImgWrapper) {
 
   document.head.appendChild(script);
 }
-
-
