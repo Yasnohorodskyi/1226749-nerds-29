@@ -166,6 +166,7 @@ input[type="radio"].visually-hidden {
   max-width: var(--action-button-max-width, 100%);
   margin: 0;
   padding: 17px var(--action-button-padding, 40px) 15px;
+  vertical-align: inherit;
 
   color: var(--white-1);
   font-weight: 500;
@@ -649,6 +650,7 @@ input[type="radio"].visually-hidden {
   width: 25px;
   height: 2px;
   margin-right: 12px;
+  vertical-align: inherit;
 
   background-color: var(--red-1);
 }
@@ -1527,7 +1529,7 @@ templates
 .templates-list {
   display: grid;
   column-gap: 40px;
-  row-gap: 31px;
+  row-gap: 29px;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -1537,6 +1539,7 @@ templates
   min-height: 619px;
 
   border-radius: 5px;
+  border: 1px solid var(--black-1-10);
   overflow: hidden;
 }
 
@@ -1558,7 +1561,7 @@ templates
   position: relative;
   z-index: 1;
 
-  margin: 1px auto 0;
+  margin: 0 auto;
 }
 
 .templates-list__item::before {
@@ -1659,7 +1662,7 @@ templates
 .pagination {
   display: flex;
   flex-wrap: wrap;
-  margin: 55px 0 0;
+  margin: 54px 0 0;
 }
 
 .pagination__page {
