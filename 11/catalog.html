@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Магазин</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <base href="https://htmlacademy-htmlcss.github.io/1226749-nerds-29/11/">
+</head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header__navigation">
+        <a class="main-header__logo" href="index.html">
+          <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс. Переход на главную страницу.">
+        </a>
+        <ul class="main-header__menu list-reset">
+          <li>
+            <a href="blank.html">Студия</a>
+          </li>
+          <li>
+            <a href="blank.html">Клиeнты</a>
+          </li>
+          <li>
+            <a>Магазин</a>
+          </li>
+          <li>
+            <a href="blank.html">Контакты</a>
+          </li>
+        </ul>
+        <a class="main-header_basket"  href="blank.html">Корзина</a>
+      </nav>
+    </header>
+    <main>
+      <div class="main-title">
+        <h1>Магазин готовых шаблонов</h1>
+      </div>
+      <section class="templates">
+        <h2 class="visually-hidden">Шаблоны</h2>
+        <form class="templates__filter-panel filter-panel" method="GET" action="https://echo.htmlacademy.ru/">
+          <fieldset class="filter-panel__fieldset">
+            <legend id="filter-panel__cost-title-js">Стоимость:</legend>
+            <div class="filter-panel__field-wrapper">
+              <div class="filter-panel__field filter-panel__field--cost">
+                <label for="cost-min-js">От</label>
+                <input type="number" name="cost-min" min="0" max="22059" value="0" id="cost-min-js">
+              </div>
+              <div class="filter-panel__field filter-panel__field--cost">
+                <label for="cost-max-js">До</label>
+                <input type="number" name="cost-max" min="0" max="22059" value="15000" id="cost-max-js">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="filter-panel__fieldset filter-panel__fieldset--grid">
+            <legend>Сетка:</legend>
+            <div class="filter-panel__field filter-panel__field--grid">
+              <input class="visually-hidden" type="radio" name="grid" value="adaptive" id="grid-adaptive" checked>
+              <label for="grid-adaptive">Адаптивная</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--grid">
+              <input class="visually-hidden" type="radio" name="grid" value="fixed" id="grid-fixed">
+              <label for="grid-fixed">Фиксированная</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--grid">
+              <input class="visually-hidden" type="radio" name="grid" value="responsive" id="grid-responsive">
+              <label for="grid-responsive">Резиновая</label>
+            </div>
+          </fieldset>
+          <fieldset class="filter-panel__fieldset filter-panel__fieldset--features">
+            <legend>Особенности:</legend>
+            <div class="filter-panel__field filter-panel__field--features">
+              <input class="visually-hidden" type="checkbox" name="features" value="slider" id="features-slider" checked>
+              <label for="features-slider">Слайдер</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--features">
+              <input class=" visually-hidden" type="checkbox" name="features" value="advantage" id="features-advantage">
+              <label for="features-advantage">Блок преимуществ</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--features">
+              <input class="visually-hidden" type="checkbox" name="features" value="news" id="features-news" checked>
+              <label for="features-news">Новости</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--features">
+              <input class="visually-hidden" type="checkbox" name="features" value="gallery" id="features-gallery">
+              <label for="features-gallery">Галерея</label>
+            </div>
+            <div class="filter-panel__field filter-panel__field--features">
+              <input class="visually-hidden" type="checkbox" name="features" value="basket" id="features-basket">
+              <label for="features-basket">Корзина</label>
+            </div>
+          </fieldset>
+          <button class="filter-panel__submit action-button action-button--gray" type="submit">Показать</button>
+        </form>
+        <div class="templates__sort-panel sort-panel">
+          <p class="sort-panel__title">Сортировать:</p>
+          <button class="sort-panel__type sort-panel__type--active" type="button">По цене</button>
+          <button class="sort-panel__type" type="button">По типу</button>
+          <button class="sort-panel__type" type="button">По названию</button>
+          <button class="sort-panel__direction sort-panel__direction--descending sort-panel__direction--active" type="button">
+            <span class="visually-hidden">По убыванию</span>
+          </button>
+          <button class="sort-panel__direction sort-panel__direction--ascending" type="button">
+            <span class="visually-hidden">По возрастанию</span>
+          </button>
+        </div>
+        <ul class="templates__templates-list templates-list list-reset">
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-sedona.jpg" width="358" height="578" alt="Макет сайта Sedona.">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">Sedona</a>
+              <p class="templates-list__item-description">Информационный сайт <br> для туристов</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-pink.jpg" width="358" height="578" alt="Макет сайта Pink App.">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">Pink App</a>
+              <p class="templates-list__item-description">Продуктовый лендинг приложения для iOS и Android</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-barbershop.jpg" width="358" height="578" alt="Макет сайта Barbershop.">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">Barbershop</a>
+              <p class="templates-list__item-description">Сайт салона красоты. <br> Для мужчин, да.</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-mishka.jpg" width="358" height="578" alt="Макет сайта Mishka.">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">Mishka</a>
+              <p class="templates-list__item-description">Интернет-магазин <br> вязаных игрушек</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-aplus.jpg" width="358" height="578" alt="Макет сайта A Plus.">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">A Plus</a>
+              <p class="templates-list__item-description">Лендинг курсов повышения квалификации</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+          <li class="templates-list__item" tabindex="0">
+            <img src="img/template-kvast.jpg" width="358" height="578" alt="Макет сайта Кваст">
+            <div class="templates-list__item-info">
+              <a class="templates-list__item-title" href="blank.html">КВАСТ</a>
+              <p class="templates-list__item-description">Промо-сайт производителя крафтового кваса</p>
+              <button class="templates-list__cost action-button" type="button">9 900 ₽</button>
+            </div>
+          </li>
+        </ul>
+        <ul class="templates__pagination pagination list-reset">
+          <li>
+            <a class="pagination__page pagination__page--active action-button action-button--gray">1</a>
+          </li>
+          <li>
+            <a class="pagination__page action-button action-button--gray" href="#">2</a>
+          </li>
+          <li>
+            <a class="pagination__page action-button action-button--gray" href="#">3</a>
+          </li>
+          <li>
+            <a class="pagination__page pagination__page--next action-button action-button--gray" href="#">Следующая</a>
+          </li>
+        </ul>
+      </section>
+      <section class="placement placement--catalog">
+        <h2 class="visually-hidden">Наше расположение</h2>
+        <div class="placement__description">
+          <p class="placement__description-title">NЁRDS DESIGN STUDIO</p>
+          <p class="placement__description-address">191186, Санкт-Петербург, <br> ул. Б. Конюшенная, д. 19/8</p>
+          <a class="placement__description-telephone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a>
+          <a class="placement__description-button action-button" href="blank.html" id="placement__description-button-js">Напишите нам</a>
+        </div>
+        <div class="placement__img-map-wrapper" id="placement__img-map-wrapper-js">
+          <img src="img/map.png" width="1440" height="416" alt="Дом на пересечении Волынского переулка и Большой Конюшенной.">
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <ul class="main-footer__links-list list-reset">
+        <li>
+          <a class="main-footer__link" href="blank.html">
+            <img src="img/vk-icon.svg" width="26" height="15" alt="Перейти во Вконтакте">
+          </a>
+        </li>
+        <li>
+          <a class="main-footer__link" href="blank.html">
+            <img src="img/fb-icon.svg" width="12" height="22" alt="Перейти в Facebook">
+          </a>
+        </li>
+        <li>
+          <a class="main-footer__link" href="blank.html">
+            <img src="img/insta-icon.svg" width="21" height="21" alt="Перейти в Instagram">
+          </a>
+        </li>
+      </ul>
+      <div class="main-footer__promotion-wrapper">
+        <p class="main-footer__promotion-title">Давайте дружить, это выгодно!</p>
+        <p class="main-footer__promotion-description">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
+    </footer>
+
+    <section class="popup popup--no-js" id="popup-js">
+      <h2 class="popup__title">Напишите нам</h2>
+      <button class="popup__close-button" type="button" id="popup__close-button-js">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+      <form class="popup__form" method="POST" action="https://echo.htmlacademy.ru/">
+        <div class="popup__field popup__field--name">
+          <label for="popup-field-name-js">Ваше имя:</label>
+          <input type="text" name="name" id="popup-field-name-js" placeholder="Имя Фамилия">
+        </div>
+        <div class="popup__field popup__field--email">
+          <label for="popup-field-email-js">Ваш email:</label>
+          <input type="email" name="email" id="popup-field-email-js" placeholder="email@example.com">
+        </div>
+        <div class="popup__field popup__field--textarea">
+          <label for="popup-field-letter-js">Текст письма:</label>
+          <textarea name="letter" id="popup-field-letter-js" placeholder="В свободной форме"></textarea>
+        </div>
+        <button class="popup__submit action-button" type="submit" id="popup__submit-js">Отправить</button>
+      </form>
+    </section>
+
+    <script src="js/app.min.js"></script>
+
+  </body>
+</html>
