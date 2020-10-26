@@ -36,12 +36,11 @@
     "browserslist": [
         "last 2 chrome version",
         "last 2 firefox version",
-        "last 2 opera version",
         "last 2 safari version"
     ],
     "editorconfig-cli": [
         "*.json",
-        "html/**/*.html",
+        "*.html",
         "js/**/*.js",
         "css/style.css",
         "img/**/*.svg"
