@@ -4,9 +4,9 @@ const gulp = require(`gulp`);
 const plumber = require(`gulp-plumber`);
 const htmlValidator = require(`gulp-w3c-html-validator`);
 const sourcemap = require(`gulp-sourcemaps`);
-const csso = require(`gulp-csso`);
+const postcss = require(`gulp-postcss`);
 const rename = require(`gulp-rename`);
-const uglify = require(`gulp-uglify-es`).default;
+const terser = require(`gulp-terser`);
 const concat = require(`gulp-concat`);
 const server = require(`browser-sync`).create();
 
@@ -17,25 +17,25 @@ gulp.task(`test`, function () {
     .pipe(htmlValidator.reporter());
 });
 
-gulp.task(`css`, function () {
+gulp.task(`styles`, function () {
   return gulp.src(`css/style.css`)
     .pipe(plumber())
     .pipe(sourcemap.init())
-    .pipe(csso())
+    .pipe(postcss([
+      require(`autoprefixer`),
+      require(`postcss-csso`)
+    ]))
     .pipe(rename(`style.min.css`))
     .pipe(sourcemap.write(`.`))
     .pipe(gulp.dest(`css/`))
     .pipe(server.stream());
 });
 
-gulp.task(`js`, function () {
-  return gulp.src([
-    `js/**/*.js`,
-    `!js/**/*.min.js`
-  ])
+gulp.task(`scripts`, function () {
+  return gulp.src(`js/modules/**/*.js`)
     .pipe(sourcemap.init())
     .pipe(concat(`app.min.js`))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(sourcemap.write())
     .pipe(gulp.dest(`js/`));
 });
@@ -51,9 +51,9 @@ gulp.task(`server`, function () {
 
   gulp.watch(`html/**/*.html`).on(`change`, server.reload);
   gulp.watch(`img/**/*.{png, jpg, svg, webp}`).on(`change`, server.reload);
-  gulp.watch(`css/style.css`, gulp.series(`css`)).on(`change`, server.reload);
-  gulp.watch(`js/**/*.js`).on(`change`, gulp.series(`js`, server.reload));
+  gulp.watch(`css/style.css`, gulp.series(`styles`)).on(`change`, server.reload);
+  gulp.watch(`js/**/*.js`).on(`change`, gulp.series(`scripts`, server.reload));
 });
 
-gulp.task(`start`, gulp.series(`server`));
-gulp.task(`build`, gulp.series(`css`, `js`));
+gulp.task(`build`, gulp.series(`styles`, `scripts`));
+gulp.task(`start`, gulp.series(`build`, `server`));
