@@ -11,7 +11,7 @@ const concat = require(`gulp-concat`);
 const server = require(`browser-sync`).create();
 
 gulp.task(`test`, function () {
-  return gulp.src(`html/**/*.html`)
+  return gulp.src(`*.html`)
     .pipe(plumber())
     .pipe(htmlValidator())
     .pipe(htmlValidator.reporter());
@@ -49,7 +49,7 @@ gulp.task(`server`, function () {
     ui: false
   });
 
-  gulp.watch(`html/**/*.html`).on(`change`, server.reload);
+  gulp.watch(`*.html`).on(`change`, server.reload);
   gulp.watch(`img/**/*.{png, jpg, svg, webp}`).on(`change`, server.reload);
   gulp.watch(`css/style.css`, gulp.series(`styles`)).on(`change`, server.reload);
   gulp.watch(`js/**/*.js`).on(`change`, gulp.series(`scripts`, server.reload));
