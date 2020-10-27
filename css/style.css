@@ -1136,7 +1136,9 @@ input[type="radio"].visually-hidden {
 }
 
 .popup__field input:invalid,
-.popup__field textarea:invalid {
+.popup__field input:invalid::placeholder,
+.popup__field textarea:invalid,
+.popup__field textarea:invalid::placeholder {
   color: var(--red-2);
 
   border-color: var(--red-2);
