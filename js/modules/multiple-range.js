@@ -25,11 +25,13 @@
             class="filter-panel__cost-point filter-panel__cost-point--min"
             tabindex="0"
             id="filter-panel__cost-point-min-js"
+            aria-label="Изменить минимальную стоимость"
           ></div>
           <div
             class="filter-panel__cost-point filter-panel__cost-point--max"
             tabindex="0"
             id="filter-panel__cost-point-max-js"
+            aria-label="Изменить максимальную стоимость"
           ></div>
         </div>
       </div>

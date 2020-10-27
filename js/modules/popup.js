@@ -21,6 +21,12 @@
     EMAIL: `userEmail`,
   };
 
+  const onEscKeyDown = (evt) => {
+    if (evt.code === `Escape`) {
+      closePopup();
+    }
+  };
+
   const openPopup = (evt) => {
     evt.preventDefault();
 
@@ -34,6 +40,9 @@
     nameInput.addEventListener(`input`, onFieldDataChanged);
     emailInput.addEventListener(`input`, onFieldDataChanged);
     letterTextarea.addEventListener(`input`, onFieldDataChanged);
+    document.addEventListener(`keydown`, onEscKeyDown);
+
+    nameInput.focus();
   };
 
   const closePopup = (evt) => {
@@ -49,6 +58,9 @@
     nameInput.removeEventListener(`input`, onFieldDataChanged);
     emailInput.removeEventListener(`input`, onFieldDataChanged);
     letterTextarea.removeEventListener(`input`, onFieldDataChanged);
+    document.removeEventListener(`keydown`, onEscKeyDown);
+
+    openPopupBtn.focus();
   };
 
   const clearPopup = () => {
