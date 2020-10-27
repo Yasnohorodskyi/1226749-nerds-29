@@ -153,6 +153,29 @@ input[type="radio"].visually-hidden {
 }
 
 
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(5px);
+  }
+}
+
+
 /*
 
     action-button
@@ -1142,6 +1165,10 @@ input[type="radio"].visually-hidden {
 
 .popup__field--textarea textarea {
   resize: none;
+}
+
+.popup__input--error {
+  animation: shake 0.5s;
 }
 
 .popup__submit {

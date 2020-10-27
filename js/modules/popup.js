@@ -3,7 +3,8 @@
 (() => {
   const OPENED_CLASS = `popup--opened`;
   const NO_JS_CLASS = `popup--no-js`;
-  const ERROR_CLASS = `popup--error`;
+  const ERROR_SUBMIT_CLASS = `popup--error`;
+  const ERROR_INPUT_CLASS = `popup__input--error`;
   const ERROR_MESSAGE = `Обязательное поле для заполнения`;
   const URL = `https://echo.htmlacademy.ru/`;
 
@@ -51,7 +52,7 @@
     }
 
     popup.classList.remove(OPENED_CLASS);
-    popup.classList.remove(ERROR_CLASS);
+    popup.classList.remove(ERROR_SUBMIT_CLASS);
 
     closePopupBtn.removeEventListener(`click`, closePopup);
     submitPopupFormBtn.removeEventListener(`click`, submitForm);
@@ -72,7 +73,7 @@
   const submitForm = (evt) => {
     evt.preventDefault();
 
-    popup.classList.remove(ERROR_CLASS);
+    popup.classList.remove(ERROR_SUBMIT_CLASS);
 
     if (isValidFormData()) {
       fetch(URL, {
@@ -81,7 +82,7 @@
       })
         .then((response) => {
           if (!response.ok) {
-            popup.classList.add(ERROR_CLASS);
+            popup.classList.add(ERROR_SUBMIT_CLASS);
 
             throw new Error(`_${response.status}: ${response.statusText}`);
           }
@@ -95,7 +96,7 @@
           return response;
         })
         .catch((error) => {
-          popup.classList.add(ERROR_CLASS);
+          popup.classList.add(ERROR_SUBMIT_CLASS);
 
           throw error;
         });
@@ -110,6 +111,10 @@
     }
 
     field.setCustomValidity(ERROR_MESSAGE);
+    field.classList.add(ERROR_INPUT_CLASS);
+    setTimeout(() => {
+      field.classList.remove(ERROR_INPUT_CLASS);
+    }, 500);
 
     return false;
   };
@@ -127,5 +132,9 @@
   if (popup && openPopupBtn && closePopupBtn && submitPopupFormBtn) {
     popup.classList.remove(NO_JS_CLASS);
     openPopupBtn.addEventListener(`click`, openPopup);
+
+    nameInput.required = false;
+    emailInput.required = false;
+    letterTextarea.required = false;
   }
 })();
